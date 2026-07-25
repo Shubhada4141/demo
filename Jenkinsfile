@@ -13,16 +13,16 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo 'Building Docker image'
-                bat 'docker build -t utility-app1:latest .'
+                bat 'docker build -t utility-app:latest .'
             }
         }
 
         stage('Run Docker Container') {
             steps {
                 echo 'Running Utility App container'
-                bat 'docker stop utility-app-container1 || exit 0'
-                bat 'docker rm utility-app-container1 || exit 0'
-                bat 'docker run -d -p 8000:10000 --name utility-app-container1 utility-app1:latest'
+                bat 'docker stop utility-app-container || exit 0'
+                bat 'docker rm utility-app-container || exit 0'
+                bat 'docker run -d -p 8000:10000 --name utility-app-container utility-app:latest'
             }
         }
     }
