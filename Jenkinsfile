@@ -22,7 +22,7 @@ pipeline {
                 echo 'Running Utility App container'
                 bat 'docker stop utility-app-container || exit 0'
                 bat 'docker rm utility-app-container || exit 0'
-                bat 'docker run -d -p 8000:8080 --name utility-app-container utility-app:latest'
+                bat 'docker run -d -p 8000:10000 --name utility-app-container utility-app:latest'
             }
         }
     }
